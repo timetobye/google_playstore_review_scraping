@@ -28,7 +28,7 @@ class GetSpecificWebPage:
 
             if web_page_new_height == web_page_last_height:
 
-                if more_button_click_count == 20:  # To-do change value 3 to 50
+                if more_button_click_count == 20:  # To-do : find a best value..
                     page_source_html = self.chrome_driver.page_source
                     page_source_soup = BeautifulSoup(page_source_html, 'html.parser')
                     review_source_list = page_source_soup.find_all('div', class_="d15Mdf bAhLNe")
