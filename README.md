@@ -121,7 +121,7 @@ python3 review_manager.py
 
 
 #### example
-
+![alt text](https://github.com/timetobye/google_playstore_review_scraping/blob/master/review_sample_image_1.gif)
 
 :open_file_folder: Directory structure
 ------------
