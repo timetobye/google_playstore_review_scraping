@@ -1,4 +1,4 @@
-naver_cafe_board_scraping
+google_playstore_review_scraping
 ---------------------
 ![alt text](https://img.shields.io/badge/Python-3.7-red.svg)
 ![alt text](https://img.shields.io/badge/selenium-Chrome%20driver-brightgreen.svg)
@@ -75,7 +75,7 @@ python3 review_manager.py
 
 :building_construction: 상세 설명
 
-1. 실행을 하게 되면 App의 리뷰 페이지 링크를 입력 해달라는 메시지가 뜹니다. 
+1. 실행을 하게 되면 App의 리뷰 페이지 링크를 입력 해달라는 메시지가 뜹니다.
 2. 입력해주세요. App 리뷰 페이지 링크로 이동합니다.
 3. 잠시 후 App 리뷰 모두 보기로 자동으로 이동합니다.
 4. 기본 default 보기가 유용순으로 되어 있는데, 최신순으로 자동으로 변환해 줍니다.
@@ -142,6 +142,7 @@ python3 review_manager.py
 - [ ] 더 많은 리뷰를 가져올 수 있도록 방법 찾기
 - [ ] user_simple_comment, user_specific_comment 를 하나로 합쳐서 csv로 저장하는 코드 구현
 - [ ] 현재 App 당 20분 정도 걸리는데 시간 단축해보기
+- [ ] 진행 중 일때 출력되는 메시지 업데이트
 
 :man_technologist: Contact
 ```
