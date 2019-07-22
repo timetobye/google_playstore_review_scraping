@@ -7,7 +7,7 @@ google_playstore_review_scraping
 ![alt text](https://img.shields.io/badge/data-web-orange.svg)
 
 
-> Google Playstore에서 App의 review commnet를 가져와서 csv로 저장합니다.
+> Google Playstore에서 App의 review를 가져와서 csv로 저장합니다.
 
 :spiral_notepad: Introduction
 ----------------------------
@@ -21,7 +21,7 @@ google_playstore_review_scraping
 이전에 작성한 naver cafe에 작성된 게시글을 가져오는 것과는 또 다른 재미(?)가 있었습니다. 
 로그인이 없었기 떄문에 접근 하는 것 자체는 쉬웠으나, 과도한 크롤링에 IP 자체를 차단해버리면 어쩌지 하는 두려움도 있었습니다. 
 어찌됐든 시간 간격을 잘 설정해서 그런 일은 없었으니 다행이지요.
-그러나 리뷰 페이지는 쉬운 대상은 아니었습니다. Selenium으로 페이지를 계속 스크롤 해야 하는데, 스크롤 하는 기법을 몰라서 찾아보고
+그러나 리뷰 페이지는 쉬운 대상은 아니었습니다. selenium으로 페이지를 계속 스크롤 해야 하는데, 스크롤 하는 기법을 몰라서 찾아보고
 다시 적용해보고, 에러가 발생하면 다시 또 찾아보고... 반복의 연속이었습니다.
 더군다나 selenium으로 실행한 chrome browser는 일정 페이지를 로딩하면 한계가 있는 것 처럼 보였습니다. 
 그래서 리뷰는 수만개가 달려있어도 막상 가져올 수 있는 건 3000개 조금 넘은 숫자입니다. 
@@ -32,7 +32,8 @@ google_playstore_review_scraping
 리뷰 분석을 할 때 좀 더 ~~스트레스 덜 받고~~ 즐겁게 할 수 있을 것 같습니다.
 
 항상 혼자 코드를 작성하다 보니 많이 외롭고...쉽지 않지만 그래도 언젠가 이 시간이 밑거름이 될 거라고 생각합니다.
-~~동기랑 같이 해보고 싶은 것 중 하나였..~~
+
+~~동기랑 같이 해보고 싶은 것 중 하나였는데...아쉽다..이젠 못 하겠네~~
 
 :keyboard: 설치 방법
 -------------
@@ -41,7 +42,7 @@ google_playstore_review_scraping
 git clone https://github.com/timetobye/google_playstore_review_scraping.git
 ``` 
 
-selenium용 driver download
+**selenium용 driver download**
 - selenium을 사용하려면 driver가 필요합니다.
 - chrome web driver를 사용하였습니다.
 - 자신의 chrome browser version에 맞는 것을 다운 받아주세요.
@@ -140,9 +141,10 @@ python3 review_manager.py
 :memo: To-Do list
 ------------------
 - [ ] 더 많은 리뷰를 가져올 수 있도록 방법 찾기
-- [ ] user_simple_comment, user_specific_comment 를 하나로 합쳐서 csv로 저장하는 코드 구현
+- [ ] user_simple_commen, user_specific_comment 를 하나로 합쳐서 csv로 저장하는 코드 구현
 - [ ] 현재 App 당 20분 정도 걸리는데 시간 단축해보기
 - [ ] 진행 중 일때 출력되는 메시지 업데이트
+- [ ] try-except를 활용한 에러 대응
 
 :man_technologist: Contact
 ```
