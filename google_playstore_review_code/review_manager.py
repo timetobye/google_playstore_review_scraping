@@ -39,7 +39,7 @@ def get_review_user_info(specific_users_web_page_info):
     return user_reviews_result_dict
 
 
-def create_csv_file(user_reviews_result_dict):
+def create_csv_file(user_reviews_result_dict, application_name):
     user_reviews_result_df = pd.DataFrame.from_dict(user_reviews_result_dict, orient='index')
     user_reviews_result_df = user_reviews_result_df[
         [
@@ -57,7 +57,7 @@ def create_csv_file(user_reviews_result_dict):
 
     now_time = datetime.now()
     file_date = now_time.strftime('%Y-%m-%d')
-    file_name = f'app_user_reviews_{file_date}.csv'
+    file_name = f'{application_name}_app_user_reviews_{file_date}.csv'
 
     user_reviews_result_df.to_csv(file_name, index=False)
 
@@ -71,6 +71,7 @@ def main():
     - socar : https://play.google.com/store/apps/details?id=socar.Socar
     """
     # input access page url
+    application_name = input('앱 이름을 입력해 주세요 ex) socar : ')
     access_page_url = input('원하는 앱 리뷰 페이지 주소를 복사해서 입력해주세요 : ')
 
     program_start_time = default_timer()
@@ -89,7 +90,7 @@ def main():
     time.sleep(3)
 
     user_review_result = get_review_user_info(specific_users_web_page_info)
-    create_csv_file(user_review_result)
+    create_csv_file(user_review_result, application_name)
 
     program_end_time = default_timer()
     program_running_time = program_end_time - program_start_time
