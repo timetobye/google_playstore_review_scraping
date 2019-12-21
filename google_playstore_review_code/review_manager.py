@@ -56,7 +56,7 @@ def create_csv_file(user_reviews_result_dict, application_name):
     user_reviews_result_df.sort_values(by='user_review_date', ascending=False)
 
     now_time = datetime.now()
-    file_date = now_time.strftime('%Y-%m-%d')
+    file_date = now_time.strftime('%Y%m%d_%H%M%S')
     file_name = f'{application_name}_app_user_reviews_{file_date}.csv'
 
     user_reviews_result_df.to_csv(file_name, index=False)

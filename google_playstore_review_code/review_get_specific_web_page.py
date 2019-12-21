@@ -13,6 +13,8 @@ class GetSpecificWebPage:
         more_button_click_string_xpath = f'//*[@id="fcxH9b"]/div[4]/c-wiz[2]/div/div[2]/' \
                                          f'div/div[1]/div/div/div[1]/div[2]/div[2]/div/span/span'
 
+        repeat_check = 0  # 무한로딩 방지용으로 설정해둠
+
         while True:
             # Scroll down to bottom
             self.chrome_driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -28,9 +30,9 @@ class GetSpecificWebPage:
 
             if web_page_new_height == web_page_last_height:
 
-                if more_button_click_count == 20:  # To-do : find a best value..
-                    page_source_html = self.chrome_driver.page_source
-                    page_source_soup = BeautifulSoup(page_source_html, 'html.parser')
+                if more_button_click_count == 40:  # To-do : find a best value..
+                    # page_source_html = self.chrome_driver.page_source
+                    page_source_soup = BeautifulSoup(self.chrome_driver.page_source, 'html.parser')
                     review_source_list = page_source_soup.find_all('div', class_="d15Mdf bAhLNe")
 
                     count_review_source = len(review_source_list)
@@ -39,12 +41,19 @@ class GetSpecificWebPage:
                     return review_source_list
 
                 try:
+                    self.chrome_driver.find_element_by_xpath(more_button_click_string_xpath).click()
                     more_button_click_count += 1
                     print(f'more_click_count : {more_button_click_count}')
-                    self.chrome_driver.find_element_by_xpath(more_button_click_string_xpath).click()
                     time.sleep(random.randint(2, 5))
 
+                    repeat_check = 0
+
                 except Exception as e:
+                    repeat_check += 1
+
+                    if repeat_check >= 5:
+                        break
+
                     print(e)
                     continue
             else:
