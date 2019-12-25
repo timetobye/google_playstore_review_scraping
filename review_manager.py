@@ -2,21 +2,21 @@ import pandas as pd
 import time
 from datetime import datetime
 from timeit import default_timer
-from review_run_web_driver import RunChromeWebDriver
-from review_set_default_web_page import SetDefaultWebPage
-from review_get_specific_web_page import GetSpecificWebPage
-from review_get_review_comment_info import GetReviewComment
+from google_playstore_review_code import review_run_web_driver
+from google_playstore_review_code import review_set_default_web_page
+from google_playstore_review_code import review_get_specific_web_page
+from google_playstore_review_code import review_get_review_comment_info
 
 
 def run_driver():
-    web_driver = RunChromeWebDriver()
+    web_driver = review_run_web_driver.RunChromeWebDriver()
     execute_chrome_web_driver = web_driver.run_chrome_web_driver()
 
     return execute_chrome_web_driver
 
 
 def set_default_parsing_page(driver, access_url):
-    set_default_web_page = SetDefaultWebPage(driver=driver)
+    set_default_web_page = review_set_default_web_page.SetDefaultWebPage(driver=driver)
     access_driver = set_default_web_page.access_parsing_web_page(access_url)
 
     # get web_page last height
@@ -26,14 +26,14 @@ def set_default_parsing_page(driver, access_url):
 
 
 def get_specific_parsing_page_info(driver, web_page_last_height):
-    specific_web_page = GetSpecificWebPage(driver)
+    specific_web_page = review_get_specific_web_page.GetSpecificWebPage(driver)
     specific_users_web_page_info = specific_web_page.get_the_specific_web_page_info(web_page_last_height)
 
     return specific_users_web_page_info
 
 
 def get_review_user_info(specific_users_web_page_info):
-    user_review_information = GetReviewComment()
+    user_review_information = review_get_review_comment_info.GetReviewComment()
     user_reviews_result_dict = user_review_information.get_user_review(specific_users_web_page_info)
 
     return user_reviews_result_dict
