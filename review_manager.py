@@ -47,8 +47,9 @@ def create_csv_file(user_reviews_result_dict, application_name):
             'user_app_rating',
             'user_review_date',
             'company_comment_date',
-            'user_simple_comment',
-            'user_specific_comment',
+            # 'user_simple_comment',
+            # 'user_specific_comment',
+            'comment',
             'company_answer_check'
         ]
     ]

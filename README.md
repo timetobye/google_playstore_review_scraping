@@ -115,10 +115,7 @@ python3 review_manager.py
 - user_app_rating : 별점
 - user_review_date : 리뷰 작성 날짜
 - company_comment_date : 서비스 제공자가 답변 작성한 날짜
-- user_simple_comment : 리뷰 내용
-- user_specific_comment : 리뷰 상세
-  - 간혹 리뷰가 길어서 user_simple_comment에서 다 못 가져오는 경우가 있습니다.
-  - 이를 위해 리뷰 상세 소스도 가져옵니다.
+- comment : 리뷰 내용
 - company_answer_check : 서비스 제공자 답변 여부
 
 
@@ -144,9 +141,8 @@ python3 review_manager.py
 ------------------
 - [X] 더 많은 리뷰를 가져올 수 있도록 방법 찾기
   - 2019.12.21 기준 6천개 이상 가져올 수 있음
-- [ ] user_simple_commen, user_specific_comment 를 하나로 합쳐서 csv로 저장하는 코드 구현
-- [ ] 현재 App 당 20분 정도 걸리는데 시간 단축해보기
-  - 셀레니움 속도상 어려울 듯
+- [X] user_simple_commen, user_specific_comment 를 하나로 합쳐서 csv로 저장하는 코드 구현
+  - comment 라는 값 하나로 합쳐서 구현
 - [ ] 진행 중 일때 출력되는 메시지 업데이트
 - [ ] try-except를 활용한 에러 대응
 

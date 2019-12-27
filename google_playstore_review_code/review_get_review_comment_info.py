@@ -56,17 +56,24 @@ def get_simple_comment(user_info_soup):
     return simple_comment
 
 
-def get_comment_all(user_info_soup):
+def get_specific_comment(user_info_soup):
     specific_comment_list = user_info_soup.find_all('span', jsname='fbQN7e')
     specific_comment = specific_comment_list[0].get_text()
 
+    return specific_comment
+
+
+def get_comment(user_info_soup):
+
+    specific_comment = get_specific_comment(user_info_soup)
+
     if specific_comment:
+
         return specific_comment
-
     else:
-        no_comment_all = 'no_specific_comment'
+        simple_comment = get_simple_comment(user_info_soup)
 
-        return no_comment_all
+        return simple_comment
 
 
 def get_answer_check(user_info_soup):
@@ -98,8 +105,9 @@ class GetReviewComment:
             star_rate = get_star_rate(user_info_soup)
             review_date, answer_date = get_date(user_info_soup)
             name = get_name(user_info_soup)
-            simple_comment = get_simple_comment(user_info_soup)
-            comment_all = get_comment_all(user_info_soup)
+            # simple_comment = get_simple_comment(user_info_soup)
+            # comment_all = get_specific_comment(user_info_soup)
+            comment = get_comment(user_info_soup)
             answer_check = get_answer_check(user_info_soup)
 
             if i not in user_review_dict:
@@ -108,8 +116,9 @@ class GetReviewComment:
                     'user_app_rating': star_rate,
                     'user_review_date': review_date,
                     'company_comment_date': answer_date,
-                    'user_simple_comment': simple_comment,
-                    'user_specific_comment': comment_all,
+                    'comment' : comment,
+                    # 'user_simple_comment': simple_comment,
+                    # 'user_specific_comment': comment_all,
                     'company_answer_check': answer_check
                 }
 
