@@ -116,7 +116,7 @@ class GetReviewComment:
                     'user_app_rating': star_rate,
                     'user_review_date': review_date,
                     'company_comment_date': answer_date,
-                    'comment' : comment,
+                    'user_comment': comment,
                     # 'user_simple_comment': simple_comment,
                     # 'user_specific_comment': comment_all,
                     'company_answer_check': answer_check

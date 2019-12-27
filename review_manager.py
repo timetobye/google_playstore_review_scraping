@@ -49,7 +49,7 @@ def create_csv_file(user_reviews_result_dict, application_name):
             'company_comment_date',
             # 'user_simple_comment',
             # 'user_specific_comment',
-            'comment',
+            'user_comment',
             'company_answer_check'
         ]
     ]
