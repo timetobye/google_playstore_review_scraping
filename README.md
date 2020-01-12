@@ -45,7 +45,8 @@ git clone https://github.com/timetobye/google_playstore_review_scraping.git
 - 자신의 chrome browser version에 맞는 것을 다운 받아주세요.
 - [chrome web driver 다운로드 페이지](http://chromedriver.chromium.org/downloads)
 - vesion
-  - 2019.12.25 ~ : 78.0.3904.105
+  - 2020.01.12 ~ : 79.x
+  - ~~2019.12.25 ~ : 78.0.3904.105~~
   - ~~2019.09.24 : 75.0.3770.140~~
   - ~~2019.09.26 ~ : 77.0.3865.40(current)~~
 - 참고로 사용했던 driver가 repo에 함께 있습니다. 
