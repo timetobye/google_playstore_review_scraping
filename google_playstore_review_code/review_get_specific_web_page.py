@@ -7,7 +7,7 @@ class GetSpecificWebPage:
     def __init__(self, driver):
         self.chrome_driver = driver
 
-    def get_the_specific_web_page_info(self, web_page_last_height):
+    def get_the_specific_web_page_info(self, web_page_last_height, button_click_count=70):
         more_button_click_count = 0
         # limit_count_review_source = 1000
         more_button_click_string_xpath = f'//*[@id="fcxH9b"]/div[4]/c-wiz[2]/div/div[2]/' \
@@ -28,7 +28,6 @@ class GetSpecificWebPage:
             time.sleep(random.randint(2, 4))
 
             if web_page_new_height == web_page_last_height:
-
                 if more_button_click_count == 100:  # To-do : find a best value..
                     # page_source_html = self.chrome_driver.page_source
                     page_source_soup = BeautifulSoup(self.chrome_driver.page_source, 'html.parser')
