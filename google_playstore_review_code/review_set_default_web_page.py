@@ -19,21 +19,19 @@ class SetDefaultWebPage:
 
     def _click_more_review_button(self):
         more_review_string_xpath = f'//*[@id="fcxH9b"]/div[4]/c-wiz/div/div[2]' \
-                                   f'/div/div[1]/div/div/div[1]/div[6]/div/span/span'
-
+                                   f'/div/div/main/div/div[1]/div[6]/div/span/span'
         self.chrome_driver.find_element_by_xpath(more_review_string_xpath).click()
         time.sleep(3)
 
     def _select_toggle_button(self):
-        select_toggle_string_xpath = f'//*[@id="fcxH9b"]/div[4]/c-wiz/div/div[2]/div/div[1]' \
-                                     f'/div/div/div[1]/div[2]/c-wiz/div/div/div[1]/div[2]/span'
-
+        select_toggle_string_xpath = f'//*[@id="fcxH9b"]/div[4]/c-wiz[2]/div/div[2]/div/div/main/' \
+                                     f'div/div[1]/div[2]/c-wiz/div[1]/div/div[1]/div[1]/div[3]/span'
         self.chrome_driver.find_element_by_xpath(select_toggle_string_xpath).click()
         time.sleep(3)
 
     def _click_recent_button(self):
-        click_recent_button_xpath = f'//*[@id="fcxH9b"]/div[4]/c-wiz/div/div[2]/div/' \
-                                    f'div[1]/div/div/div[1]/div[2]/c-wiz/div/div/div[2]/div[1]'
+        click_recent_button_xpath = f'//*[@id="fcxH9b"]/div[4]/c-wiz[2]/div/div[2]/div/div/main/' \
+                                    f'div/div[1]/div[2]/c-wiz/div[1]/div/div[2]/div[1]/span'
 
         self.chrome_driver.find_element_by_xpath(click_recent_button_xpath).click()
         time.sleep(3)

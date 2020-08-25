@@ -11,8 +11,7 @@ class GetSpecificWebPage:
         more_button_click_count = 0
         # limit_count_review_source = 1000
         more_button_click_string_xpath = f'//*[@id="fcxH9b"]/div[4]/c-wiz[2]/div/div[2]/' \
-                                         f'div/div[1]/div/div/div[1]/div[2]/div[2]/div/span/span'
-
+                                         f'div/div/main/div/div[1]/div[2]/div[2]/div/span/span'
         repeat_check = 0  # 무한로딩 방지용으로 설정해둠
 
         while True:
@@ -30,7 +29,7 @@ class GetSpecificWebPage:
 
             if web_page_new_height == web_page_last_height:
 
-                if more_button_click_count == 70:  # To-do : find a best value..
+                if more_button_click_count == 100:  # To-do : find a best value..
                     # page_source_html = self.chrome_driver.page_source
                     page_source_soup = BeautifulSoup(self.chrome_driver.page_source, 'html.parser')
                     review_source_list = page_source_soup.find_all('div', class_="d15Mdf bAhLNe")

@@ -47,8 +47,6 @@ def create_csv_file(user_reviews_result_dict, application_name):
             'user_app_rating',
             'user_review_date',
             'company_comment_date',
-            # 'user_simple_comment',
-            # 'user_specific_comment',
             'user_comment',
             'company_answer_check'
         ]
@@ -72,7 +70,7 @@ def main():
     - socar : https://play.google.com/store/apps/details?id=socar.Socar
     """
     # input access page url
-    application_name = input('앱 이름을 입력해 주세요 ex) socar : ')
+    application_name = input('앱 이름을 영어로 입력해 주세요 ex) speak : ')
     access_page_url = input('원하는 앱 리뷰 페이지 주소를 복사해서 입력해주세요 : ')
 
     program_start_time = default_timer()
